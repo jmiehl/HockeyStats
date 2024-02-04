@@ -27,7 +27,7 @@ class hockeyPlayerTableViewCell: UITableViewCell {
     
     func update(with hockeyPlayer: HockeyPlayer) {
         nameLabel.text = ("\(hockeyPlayer.firstName) \(hockeyPlayer.lastName)")
-        statsLabel.text = ("G:\(hockeyPlayer.goals) A:\(hockeyPlayer.assists) P:\(hockeyPlayer.points) PPG:\(hockeyPlayer.position)")
+        statsLabel.text = ("Position: \(hockeyPlayer.position)")
                           
     }
 

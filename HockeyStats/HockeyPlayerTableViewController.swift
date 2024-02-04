@@ -104,19 +104,19 @@ class HockeyPlayerTableViewController: UITableViewController {
                     
                     
                     
-                    if let rangersFetchedData = fetchedData["skaters"] as? [[String: Any]] {
-                        for eachFetchedRanger in rangersFetchedData {
+                    if let hockeyPlayerFetchedData = fetchedData["skaters"] as? [[String: Any]] {
+                        for eachFetchedHockeyPlayer in hockeyPlayerFetchedData {
                             
                             
-                            if let firstNameDict = eachFetchedRanger["firstName"] as? [String: Any]{
+                            if let firstNameDict = eachFetchedHockeyPlayer["firstName"] as? [String: Any]{
                                 let firstName = firstNameDict["default"] as? String
-                                let lastNameDict = eachFetchedRanger["lastName"] as? [String: Any]
+                                let lastNameDict = eachFetchedHockeyPlayer["lastName"] as? [String: Any]
                                 let lastName = lastNameDict?["default"] as? String
-                                let goals = eachFetchedRanger["goals"] as? Int
-                                let assists = eachFetchedRanger["assists"] as? Int
-                                let points = eachFetchedRanger["points"] as? Int
-                                let position = eachFetchedRanger["positionCode"] as? String
-                                let gamesPlayed = eachFetchedRanger["gamesPlayed"] as? Int
+                                let goals = eachFetchedHockeyPlayer["goals"] as? Int
+                                let assists = eachFetchedHockeyPlayer["assists"] as? Int
+                                let points = eachFetchedHockeyPlayer["points"] as? Int
+                                let position = eachFetchedHockeyPlayer["positionCode"] as? String
+                                let gamesPlayed = eachFetchedHockeyPlayer["gamesPlayed"] as? Int
                                 
                                 self.hockeyPlayers.append(HockeyPlayer(firstName: firstName!, lastName: lastName!, position: position!, goals: goals!, assists: assists!, points: points!, gamesPlayed: gamesPlayed!))
                                 

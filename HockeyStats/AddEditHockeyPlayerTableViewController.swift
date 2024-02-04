@@ -14,14 +14,15 @@ class AddEditHockeyPlayerTableViewController: UITableViewController {
     
     @IBOutlet weak var playerName: UITextField!
     
-    @IBOutlet weak var goalsTextFiels: UITextField!
+    @IBOutlet weak var gamesPlayed: UITextField!
+    
+    @IBOutlet weak var goalsTextField: UITextField!
     
     @IBOutlet weak var assistsTextField: UITextField!
     
     @IBOutlet weak var pointsTextField: UITextField!
     
     @IBOutlet weak var pointsPerGameTextField: UITextField!
-    
     
     init?(coder: NSCoder, hockeyPlayers: HockeyPlayer?) {
         self.hockeyPlayers = hockeyPlayers
@@ -46,10 +47,11 @@ class AddEditHockeyPlayerTableViewController: UITableViewController {
         // checking for hockeyPlayer value
         if let hockeyPlayers = hockeyPlayers {
             playerName.text = ("\(hockeyPlayers.firstName) \(hockeyPlayers.lastName)")
-            goalsTextFiels.text = String(hockeyPlayers.goals)
+            gamesPlayed.text = String(hockeyPlayers.gamesPlayed)
+            goalsTextField.text = String(hockeyPlayers.goals)
             assistsTextField.text = String(hockeyPlayers.assists)
             pointsTextField.text = String(hockeyPlayers.points)
-            pointsPerGameTextField.text = String(hockeyPlayers.position)
+            pointsPerGameTextField.text = String(format: "%.2f", (Float(hockeyPlayers.points)) / (Float(hockeyPlayers.gamesPlayed)))
             title = "New York Rangers"
         }
         
