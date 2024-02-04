@@ -49,7 +49,7 @@ class AddEditHockeyPlayerTableViewController: UITableViewController {
             goalsTextFiels.text = String(hockeyPlayers.goals)
             assistsTextField.text = String(hockeyPlayers.assists)
             pointsTextField.text = String(hockeyPlayers.points)
-            pointsPerGameTextField.text = String(hockeyPlayers.pointsPerGame)
+            pointsPerGameTextField.text = String(hockeyPlayers.position)
             title = "New York Rangers"
         }
         
